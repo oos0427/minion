@@ -1,1 +1,1 @@
-# ##minion
+# minion
