@@ -92,7 +92,7 @@ with open("foo.txt", "w") as f:
 #  각 요소를 실행시켜주는 sys파일 만들기 파일명을 sys1.py로 저장해야한다. p184
 import sys
 
-args = sys.argv[1:]
+args = sys.argv[1:] #argv의 의미: argv는 "argument vector"의 약자로, 프로그램에 전달된 인수들의 리스트를 의미합니다.
 for i in args:
     print(i)
 
@@ -103,3 +103,14 @@ args = sys.argv[1:]
 for i in args:
     print(i.upper(), end='')
 
+# 문제 1
+a = int(input())
+b = int(input())
+c = a + b
+print(c)
+
+# 문제 2
+print("you" "need" "python")
+print("you" + "need" + "python")
+print("you", "need", "python")
+print("".join(["you", "need", "python"]))
