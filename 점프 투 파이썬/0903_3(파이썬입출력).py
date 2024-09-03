@@ -14,3 +14,12 @@ def add_many(*args):
 
 result = add_many(1, 2, 3)
 print(result)
+
+
+#  키워드 매개변수
+def print_kwargs(**kwargs):
+    print(kwargs)
+print_kwargs(a=1)
+
+print_kwargs(name='foo', age=3)
+
