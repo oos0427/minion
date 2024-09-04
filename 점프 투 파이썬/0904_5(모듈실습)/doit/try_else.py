@@ -1,4 +1,6 @@
 #  try_else 문
+#  236p
+
 try:
     age = int(input("나이를 입력하시오"))
 
