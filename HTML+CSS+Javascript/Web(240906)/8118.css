@@ -1,0 +1,23 @@
+p{
+    border: dotted;
+    border-radius: 100px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+img{
+    border: 5px red solid ;
+    padding-left:50px;
+    padding-right:50px;
+    padding-top:50px;
+    padding-bottom:50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#img2{
+    margin-top: 150px;
+    margin-bottom: 150px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
