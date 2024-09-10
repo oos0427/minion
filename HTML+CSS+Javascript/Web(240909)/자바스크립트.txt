@@ -1,0 +1,41 @@
+240909
+사칙연산
+
+데이터삽입 number(숫자), string(문자)
+
+각종 메서스 (278p)
+length, startsWich ...
+
+타입캐스트
+- string
+- number
+- Boolean
+
+변수 데이터를 담아두는 그릇
+ex) a = 3에서 a
+ex) let a = 3 에서 let은 지금부터 변수를 만들겠습니다.
+
+조건문
+- if(조건){수행할행동}
+ex)if(i>1){console.log("hello")}
+- for(반복문)
+ex)for (let i =0; i < 5; i++){console.log("hello")} 헬로 5번 출력하는 조건문
+
+함수
+function 함수이름(변수)}{실행할내용}
+ex) function hello(){console.log("hello")}
+
+리턴
+console.log()는 화면에 글자를 출력하는것 하지만 결과물을 저장하려면 어떻게 해야할까?
+1. function plus(x, y){return x + y}
+2. let t = plus(3, 4)
+3. t 입력하면 7 출력
+리턴으로 출력값을 저장!!
+
+객체
+let id = {name:"용석", age: 29, -----}  마치 라이브러리 짜듯이
+let id = {키:값}
+id.name -> "병헌"
+
+JSON  자바스크립트에서 사용하는 객체의 규격을 제이슨이라고 부른다.
+제이슨에 삽입가능한 데이터종류 : 넘버 스트링 불리언 배열 객체  null
