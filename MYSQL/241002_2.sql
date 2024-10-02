@@ -19,7 +19,15 @@ SELECT LENGTH(LTRIM(' SQL '))
 	  ,LENGTH(RTRIM(' SSSQL '))
       ,LENGTH(TRIM(' SSSQL '));
       
+ /*예제3-7*/     
 SELECT TRIM(BOTH 'abc' FROM 'abcSQLabcabc')     -- 양쪽에서 'abc' 제거 -> 결과: 'SQL'
      ,TRIM(LEADING 'abc' FROM 'abcSQLabcabc')   -- 왼쪽에서만 'abc' 제거 -> 결과: 'SQLabcabc'
      ,TRIM(TRAILING 'abc' FROM 'abcSQLabcabc'); -- 오른쪽에서만 'abc' 제거 -> 결과: 'abcSQL'
 
+/*예제3-8*/
+SELECT FIELD('JAVA', 'SQL', 'JAVA', 'C') -- 'JAVA'의 위치 반환 (2)
+      ,FIND_IN_SET('JAVA', 'SQL,JAVA,C') -- 'JAVA'의 위치 반환 (2)
+      ,INSTR('네 인생을 살아라', '인생') -- '인생'의 시작 위치 반환 (3)
+      ,LOCATE('인생', '네 인생을 살아라'); -- '인생'의 시작 위치 반환 (3)
+      
+      
