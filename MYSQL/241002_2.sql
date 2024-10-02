@@ -18,3 +18,8 @@ SELECT LPAD('SQL', 10, '#'), RPAD('SQL', 5, '*'), LPAD('한글', 10, '#'), RPAD(
 SELECT LENGTH(LTRIM(' SQL '))
 	  ,LENGTH(RTRIM(' SSSQL '))
       ,LENGTH(TRIM(' SSSQL '));
+      
+SELECT TRIM(BOTH 'abc' FROM 'abcSQLabcabc')     -- 양쪽에서 'abc' 제거 -> 결과: 'SQL'
+     ,TRIM(LEADING 'abc' FROM 'abcSQLabcabc')   -- 왼쪽에서만 'abc' 제거 -> 결과: 'SQLabcabc'
+     ,TRIM(TRAILING 'abc' FROM 'abcSQLabcabc'); -- 오른쪽에서만 'abc' 제거 -> 결과: 'abcSQL'
+
