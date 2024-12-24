@@ -9,7 +9,9 @@ from threading import Thread
 import time
 from tqdm import tqdm  # 진행률 표시를 위한 라이브러리
 
-client = openai.OpenAI(api_key=OPENAI_API_KEY) # openai api service에 연결된 객체
+key = input("input your api key :")
+
+client = openai.OpenAI(api_key=key) # openai api service에 연결된 객체
 
 
 
