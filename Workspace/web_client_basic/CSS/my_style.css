@@ -1,0 +1,16 @@
+div 
+
+{ 
+    color:purple;
+    font-weight: bold;
+    text-align: right;
+    border: solid 5px red;
+}
+
+
+#mydiv{ 
+    color:orange;
+    font-weight: bold;
+    text-align: left;
+    border: solid 3px red;
+}
