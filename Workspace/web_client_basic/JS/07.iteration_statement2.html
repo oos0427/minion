@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>iteration_statement</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center; /* 수평 가운데 정렬 */
+            align-items: center;    /* 수직 가운데 정렬 */
+            height: 100vh;          /* 화면 전체 높이 사용 */
+            margin: 0;
+        }
+        table {
+            text-align: center;     /* 표 안의 텍스트 가운데 정렬 */
+            border-collapse: collapse; /* 테두리 중복 제거 */
+        }
+        th {
+            padding: 10px;         /* 표 안 여백 추가 */
+        }
+    </style>
+
+<script>
+    // 전체 구구단 출력
+    document.write("<div style='display: flex; flex-wrap: wrap; justify-content: center;'>");
+    for (let idan = 1; idan < 10; idan++) {
+        document.write("<table border='1'>");
+        document.write(`<caption style="font-weight: bold;">${idan}단</caption>`); // 단 제목 추가
+        for (let i = 1; i < 10; i++) {
+            document.write("<tr style='height: 50px;'>");
+            document.write(`<th>${idan} * ${i} = ${idan * i}</th>`);
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    }
+    document.write("</div>");
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>

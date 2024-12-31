@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>selection_statement</title>
+
+    <script>
+
+        const n = Math.random(randomstate=42); // 0-1 사이의 난수 발생 1은 제외
+        const n2 = n * 45 + 1 ; // 0-1 사이의 난수 발생 46은 제외
+        const n3 = Math.floor(n2) // 소수점 이하 버림
+        // alert(Math.floor(n3/10));
+        let number_range;
+        switch (Math.floor(n3/10)) {
+        case 4:
+            number_range = "40번대";
+        case 3:
+            number_range = "30번대";
+        case 2:
+            number_range = "20번대";
+        case 1:
+            number_range = "10번대";
+        default:
+            number_range = "1번대";    
+        } 
+        document.write(`<h2>selected number : ${n}</h2>`); //브라우저 화면에 출력
+        document.write(`<h2>selected number2 : ${n2}</h2>`); //브라우저 화면에 출력
+        document.write(`<h2>selected number3 : ${n3}</h2>`); //브라우저 화면에 출력
+        document.write(`<h2>selected number_range : ${number_range}</h2>`); //브라우저 화면에 출력
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
