@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        function sbn(){
+            let numbers = [];
+                for (let i = 0 ; i < 6 ; i++){
+                    const n = Math.floor(Math.random() * 45)+1; // 1-45
+                    numbers.push(n);
+                }
+                return numbers;
+        }
+
+        function show_numbers(numbers, element){
+                let str = "";
+                // for (const n in numbers){
+                //     str += `[${numbers[n]}]&nbsp`;
+                // }
+                for (const n of numbers){
+                    str += `[${n}]&nbsp`;
+                }
+                element.innerHTML = str;
+        }
+
+
+
+
+        //브라우저가 요청 문서를 준비했을 때 발생하는 이벤트 처리
+        window.addEventListener('load', (event) => {
+
+            const btn = document.querySelector('#select_button')
+            btn.addEventListener('click', (event) => {
+                const numbers = sbn();
+
+                const h3 = document.querySelector('#numbers');
+                show_numbers(numbers, h3);
+
+            });
+
+        })
+    </script>
+</head>
+<body>
+    <button id = "select_button">당첨 예상 번호 뽑기</button>
+    <hr>
+    <h3 id = "numbers"></h3>
+</body>
+</html>

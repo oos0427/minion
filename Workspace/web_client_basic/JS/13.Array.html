@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+    <script>
+
+
+const ar = [1, 2, 3, 4, 5];
+
+document.write(`<h3>`)
+for (let i = 0; i < ar.length; i++){
+        document.write(`[${ ar[i] }]`)
+}
+document.write(`</h3>`)
+
+for (let i = 0; i < 10; i++){
+    let rn = Math.random() * 90 ;
+    rn = Math.floor( rn ) + 10 ;
+    ar.push( rn );
+}
+document.write(`<h3>`)
+for (let i = 0; i < ar.length; i++){
+        document.write(`[${ ar[i] }]`)
+}
+document.write(`</h3>`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

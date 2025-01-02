@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>function_statement</title>
+    <script>
+
+        
+        function drawbox(fx, fy, line){
+            document.write("<table>")
+            for ( let y = 0; y < fy; y++ ) {
+                for ( let x = 0; x < fx; x++){
+                    if (x == 0 || x ==fx-1 || y == 0 || y == fy-1) {
+                    document.write(`<td>${line}</td>`);
+                    }
+                    else {
+                        document.write(`<td>&nbsp;</td>`);
+                    }
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+
+
+        function inputnumber(inputMsg, defaultval){
+            n = prompt(inputMsg, defaultval);
+            n = parseInt(n);
+            return n;
+        } 
+
+
+        // alert, confirm, prompt
+        let line = prompt("박스그리기에 사용할 문자를 입력하세요", "#");
+
+
+        // width = prompt("x값", 10);
+        // width = parseInt(width);
+        // height = prompt("y값", 10);
+        // height = parseInt(height);
+        const width = inputnumber("x값", "10");
+        const height = inputnumber("y값", "10");
+        // drawbox(20, 17, "★");
+        // drawbox(10, 5, "#");
+        drawbox(width, height, line);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

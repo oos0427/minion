@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+    <script>
+
+        
+    
+
+
+    </script>
+</head>
+<body>
+
+    <button id = "first_button" onclick = "alert('hello')">눌러보던가1</button>
+
+    <button id = "seccond_button">눌러보던가2</button>
+
+    <button id = "third_button">눌러보던가3</button>
+    
+    <script> 
+
+
+        const seccond_button = document.querySelector('#seccond_button');
+        seccond_button.onclick = function(event){ alert('me too');}
+
+        
+        const third_button = document.querySelector('#third_button');
+        third_button.onclick = function(event){ alert('too');}
+
+
+    </script>
+
+</body>
+</html>

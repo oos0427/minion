@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>function_statement</title>
+    <script>
+        function drawbox(fx, fy){
+            document.write("<table>")
+            for ( let y = 0; y < fy; y++ ) {
+                for ( let x = 0; x < fx; x++){
+                    if (x == 0 || x ==fx-1 || y == 0 || y == fy-1) {
+                    document.write(`<td>*</td>`);
+                    }
+                    else {
+                        document.write(`<td>&nbsp;</td>`);
+                    }
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+        drawbox(20, 10);
+        drawbox(10, 5);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

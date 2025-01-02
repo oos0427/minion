@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>function_statement</title>
+    <script>
+
+        
+        function my_sum(n1, n2){
+            return n1 + n2;
+        }
+        const f = my_sum;
+
+        //익명함수
+        const f2 = function(n1, n2){
+            return n1+n2;
+        }
+
+        const f3 = (n1, n2) => n1 + n2;
+            // lambda (n1, n2) : n1 + n2
+
+        document.write( `<h3>${my_sum(10, 20)}</h3>` );
+        document.write( `<h3>${f(20, 30)}</h3>` );
+        document.write( `<h3>${f2(30, 40)}</h3>` );
+        document.write( `<h3>${f3(40, 50)}</h3>` );
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
