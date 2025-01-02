@@ -27,17 +27,18 @@
     // 전체 구구단 출력
     document.write("<div style='display: flex; flex-wrap: wrap; justify-content: center;'>");
     for (let idan = 1; idan < 10; idan++) {
-        document.write("<table border='1'>");
-        document.write(`<caption style="font-weight: bold;">${idan}단</caption>`); // 단 제목 추가
+        document.write("<table border='1' style='margin: 10px; border-collapse: collapse;'>");
+        document.write(`<tr><th colspan='2' style='font-weight: bold; background-color: orange;'>${idan}단</th></tr>`); // 단 제목 추가
         for (let i = 1; i < 10; i++) {
             document.write("<tr style='height: 50px;'>");
-            document.write(`<th>${idan} * ${i} = ${idan * i}</th>`);
+            document.write(`<td>${idan} x ${i} = ${idan * i}</td>`);
             document.write("</tr>");
         }
         document.write("</table>");
     }
     document.write("</div>");
 </script>
+
 
 </head>
 <body>
