@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr id ="select-row"></tr>
+        <tr id ="buttons-row">
+            <td colspan = "10">
+                <button data-action="start">자동 보기 시작</button>
+                <button data-action="stop">자동 보기 종료</button>
+            </td>
+        </tr>
+
+        <tr id ="display-row">
+            <td><button data-action = "prev">이전</button></td>
+            <td colspan="8"><img></td>
+            <td><button data-action = "next">다음</button></td>
+        </tr>
+    </table>
+
+
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            let currentImg = null;
+            let currentIdx = null;
+
+            function setCurrentImage(newImage) {
+                $('#display-row img').attr('src', $(newImage).attr('src'));
+                if (currentImg) {
+                    $(currentImg).css("border", "solid 1px")
+                }
+                $(newImage).css('border','solid 2px red');
+                currentImg = newImage;
+                    
+            }
+
+            function changeImage(direction) {
+                //const idx = $(currentImg).attr('data-idx');
+                const idx = $(currentImg).data('idx');
+                newIdx = parseInt(idx) + direction;
+                if (newIdx > 9) {newIdx = 0;}
+                if (newIdx < 0) {newIdx = 9;}
+
+                $(`img[data-idx = '${newIdx}']`).trigger('click');
+            }
+
+
+
+            $('table').css({"margin":"0 auto"});
+            $("#display-row td").css("text-align", "center");
+            $('#display-row img').css({ "width":"500px", 
+                                        "height":"500px", 
+                                        "border":"solid 10px gray"});
+            $("#buttons-row td").css({"text-align": "center", "padding":"2px"})
+            $("#buttons-row button").css({"width":"150px", "height":"30px", "background-color":"pink"})
+
+            const tr = $('#select-row'); // #select-row ID의 <tr> 선택
+            for (let i = 0; i < 10; i++) { // 세미콜론(;) 수정
+                const td = $("<td></td>"); // <td> 생성
+                tr.append(td); // <tr> 하위에 <td> 추가
+                const img = $("<img>");
+                img.attr({'src': `images/${i}.jpg`, 'data-idx': `${i}`}); // src 속성 수정
+                img.css({ "width": "100px", "height": "100px", "border":"solid 1px" }); // 이미지 크기 설정
+                td.append(img); // <td>에 <img> 추가
+                
+                img.on('click', function(event){
+                setCurrentImage(event.target);
+                    });
+                }
+
+            $('#display-row button').on('click', function(event){
+                let direction = $(event.target).attr('data-action')
+                if (direction == 'prev'){
+                    changeImage(-1);
+                } else {
+                    changeImage(1);
+                }
+            });
+
+            $('#select-row img:first').trigger('click');
+
+
+            let autoViewWorkId = null;
+            $('#buttons-row button').on('click', function(event){    
+                const action = $(event.target).data('action');
+                if (action == 'start' && autoViewWorkId == null){
+                     autoViewWorkId =
+                        window.setInterval(function() {changeImage(1); }, 200);
+                    } else if (action == "stop" && autoViewWorkId != null) {
+                        window.clearInterval(autoViewWorkId);
+                        autoViewWorkId = null;
+                    }
+            });
+        });
+
+    </script>
+</body>
+</html>

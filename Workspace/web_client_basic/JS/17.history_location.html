@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>history_location</title>
+
+</head>
+<body>
+
+    <button id = "prev">이전</button>
+
+    <button id = "next">다음</button>
+
+    <hr>
+
+    <button id = "kaggle">Go to Kaggle</button>
+
+    <button id = "aihub">Go to AIHub</button>
+    
+
+
+
+
+
+
+    <script>
+    
+        
+        const btnPrev = document.querySelector('#prev').addEventListener('click', function(event){
+            history.back();
+        });
+
+        const btnnext = document.querySelector('#next').addEventListener('click', function(event){
+            history.forward();
+        });
+
+
+        const btnKaggle = document.querySelector('#kaggle').addEventListener('click', function(event){
+            location.href = "https://www.kaggle.com/"
+        })
+
+        const btnAIHub = document.querySelector('#aihub').addEventListener('click', function(event){
+            location.href = "https://www.aihub.or.kr/"
+        })
+
+        
+    </script>
+
+</body>
+</html>

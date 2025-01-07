@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery-test</title>
+</head>
+<body>
+    <button>change color</button>
+    <hr>
+    <div style="height:300px"></div>
+
+    <!-- jQuery 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('button').on('click', function() {
+                const r = Math.floor(Math.random() * 256);
+                const g = Math.floor(Math.random() * 256);
+                const b = Math.floor(Math.random() * 256);
+                $('div').css('background-color', `rgb(${r}, ${g}, ${b})`);
+            });
+        });
+    </script>
+</body>
+</html>

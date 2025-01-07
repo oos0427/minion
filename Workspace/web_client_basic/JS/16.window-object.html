@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Window_object</title>
+    <script>
+
+
+        // window는 모든 객체, 함수의 직/간접 부모 객체
+        // window.alert();
+        // window.confirm();
+        // wondow.console.log();
+        window.addEventListener('load', function(event){
+
+            function ShowTime(){
+                const msg = document.querySelector('#message');
+                msg.innerHTML = `<h3>${new Date()}</h3>`
+            }
+
+            function ShowTime2(){
+                const msg = document.querySelector('#message');
+                msg.innerHTML = `<h3>${new Date()}</h3>`
+            }
+
+            let timerId = null;
+            btn_start = document.querySelector("#start-timer");
+            btn_start.addEventListener("click", function(event){
+                // if (timerId != null) return;
+                // timerId = window.setInterval(ShowTime, 1000);
+                timerId = window.setTimeout(ShowTime2, 1000);
+            });
+            btn_stop = document.querySelector("#stop-timer");
+            btn_stop.addEventListener("click", function(event){
+                // window.clearInterval(timerId);
+                window.clearTimeout(timerId);
+
+                timerId = null;
+            });
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <button id = "start-timer">타이머 시작</button>  
+    <button id = "stop-timer">타이머 중지</button>
+    <div id = "message"></div>
+
+
+</body>
+</html>

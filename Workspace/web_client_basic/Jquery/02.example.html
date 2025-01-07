@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery-test</title>
+    <script>
+        function selectBasicNumbers() {
+            let numbers = [];
+            for (let i = 0; i < 6; i++) {
+                const n = Math.floor(Math.random() * 45) + 1; // 1 ~ 45(포함)
+                numbers.push(n)
+            }
+            return numbers;
+        }
+    </script>
+
+</head>
+<body>
+
+
+    <table>
+        <th colspan = "6">
+            <button>자동 : 5000원</button>
+        </th>
+        <tr class = "numbers">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class = "numbers">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class = "numbers">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class = "numbers">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class = "numbers">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+
+
+
+
+
+    <!-- jQuery 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('table').css({"width": "600px", "margin": "0 auto"});
+            $('button').css({"width": "100%", "height": "50px"});
+            $('.numbers td').css({  "height":"90px",
+                                    "width":"97px",
+                                    "border":"solid 1px",
+                                    "font_weight":"bold",
+                                    "text-align":"center"});
+
+            $('button').on('click', function(event) {
+                $('.numbers').each(function(_, row) {
+                    const numbers = selectBasicNumbers(); // 각 행마다 새로운 랜덤 숫자 생성
+                    $(row).find('td').each(function(idx, td) {
+                        $(td).text(numbers[idx]); // 해당 행의 <td>에 숫자 채우기
+                    });
+                });
+            });
+
+        });
+    </script>
+
+
+</body>
+</html>
