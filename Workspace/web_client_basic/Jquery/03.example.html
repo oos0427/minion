@@ -68,10 +68,15 @@
                 img.css({ "width": "100px", "height": "100px", "border":"solid 1px" }); // 이미지 크기 설정
                 td.append(img); // <td>에 <img> 추가
                 
-                img.on('click', function(event){
+                // img.on('click', function(event){
+                // setCurrentImage(event.target);
+                //     });
+                img.onclick = 함수
+            }
+
+            img.on('click', function(event){
                 setCurrentImage(event.target);
-                    });
-                }
+            });
 
             $('#display-row button').on('click', function(event){
                 let direction = $(event.target).attr('data-action')
